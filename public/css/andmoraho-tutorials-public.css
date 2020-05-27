@@ -78,6 +78,10 @@
         max-height: 315px;
     }
     
+    .fluid-width-video-wrapper {
+        width: 560px !important;
+    }
+    
     .amhtuto_tutorial__content {
         display: flex;
         flex-direction: column;

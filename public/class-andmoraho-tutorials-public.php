@@ -210,13 +210,12 @@ class Andmoraho_Tutorials_Public
                         <div class="amhtuto_tutorial__video">
                             <iframe width="560" height="315" src="https://www.youtube.com/embed/'.$tutorialYoutubeID.'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                         <div class="amhtuto_tutorial__content">
-                        <h4 class="amhtuto_tutorial__content-title">'.get_the_title().'</h4>
-                        <div class="amhtuto_tutorial__content-description">
-                            <p>'.get_the_content().'</p>
-                        </div>                        
-                    </div>
-                                           
+                        <div class="amhtuto_tutorial__content">
+                            <h4 class="amhtuto_tutorial__content-title">'.get_the_title().'</h4>
+                            <div class="amhtuto_tutorial__content-description">
+                                <p>'.get_the_content().'</p>
+                            </div>                        
+                        </div>                    
                     </div>
                 </div>';
         // TODO: organizar el html que se va a mostrar con el shortcode
