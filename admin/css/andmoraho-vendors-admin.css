@@ -1,12 +1,7 @@
-.vendor_email_error_message,
-.vendor_url_error_message,
-.vendor_phone_error_message {
+.tutorial_youtube_id_error_message {
     color: #ff0000;
 }
 
-#vendor_contact_person,
-#vendor_email,
-#vendor_phone,
-#vendor_url {
+#tutorial_youtube_id {
     width: 100%;
 }

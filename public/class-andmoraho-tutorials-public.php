@@ -176,10 +176,10 @@ class Andmoraho_Tutorials_Public
         }
        
         
-        $html = '<section class="amhvndr_wrap">';
-        $html .= '<div class="amhvndr_filter">
-            <div class="amhvndr_filter__label">Filter: </div>
-            <div class="amhvndr_filter__form">
+        $html = '<section class="amhtuto_wrap">';
+        $html .= '<div class="amhtuto_filter">
+            <div class="amhtuto_filter__label">Filter: </div>
+            <div class="amhtuto_filter__form">
         <form action="" method="GET" id="tutorialslist">
         <select name="tutorialscat" id="tutorialscat" onchange="submit();">
         <option value="">Show all</option>';
@@ -196,30 +196,25 @@ class Andmoraho_Tutorials_Public
          </div>
         </div>';
 
-        $html .= '<div class="amhvndr_tutorials">';
+        $html .= '<div class="amhtuto_tutorials">';
         $shortcodeTutorial = new WP_Query($query_args);
         
         while ($shortcodeTutorial->have_posts()) :
             $shortcodeTutorial->the_post();
 
-        $the_featured_image = get_the_post_thumbnail($post, $size = 'large', $attr = '') !='' ? get_the_post_thumbnail($post, $size = 'large', $attr = '') : '<img src="'.plugins_url('./images/default-tutorial-logo.png', __FILE__).'">';
         $tutorialYoutubeID = get_post_meta($post->ID, '_tutorial_youtube_id', true);
         
 
-        $html .= '<div class="amhvndr_tutorial">
-                    <div class="amhvndr_tutorial__container">
-                        <div class="amhvndr_tutorial__image">
-                            <a href="'.$tutorialUrl.'" target="_blank">'.$the_featured_image.'</a>
+        $html .= '<div class="amhtuto_tutorial">
+                    <div class="amhtuto_tutorial__container">
+                        <div class="amhtuto_tutorial__video">
+                            <iframe width="560" height="315" src="https://www.youtube.com/embed/'.$tutorialYoutubeID.'" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
-                         <div class="amhvndr_tutorial__content">
-                        <h4 class="amhvndr_tutorial__content-title">'.get_the_title().'</h4>
-                        <div class="amhvndr_tutorial__content-description">
+                         <div class="amhtuto_tutorial__content">
+                        <h4 class="amhtuto_tutorial__content-title">'.get_the_title().'</h4>
+                        <div class="amhtuto_tutorial__content-description">
                             <p>'.get_the_content().'</p>
-                        </div>
-                        <div class="amhvndr_tutorial__content-data">';
-        $html .= '</div>
-                        
-                        
+                        </div>                        
                     </div>
                                            
                     </div>
@@ -228,7 +223,7 @@ class Andmoraho_Tutorials_Public
         endwhile;
         $html .= '</div>';
         $big = 999999999; // need an unlikely integer
-        $html .= '<div class="amhvndr_pagination">';
+        $html .= '<div class="amhtuto_pagination">';
         $html .= paginate_links(array(
                 'base' => str_replace($big, '%#%', get_pagenum_link($big)),
                 'format' => '?paged=%#%',
