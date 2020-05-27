@@ -9,7 +9,7 @@
         <div class="amhtuto_tutorial-single">
             <div class="amhtuto_tutorial-single__container">
                 <div class="amhtuto_tutorial-single__video">
-                   <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $tutorialYoutubeID;?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                   <iframe src="https://www.youtube.com/embed/<?php echo $tutorialYoutubeId;?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
                 <h2 class="amhtuto_tutorial-single__title"><?php the_title();?></h2>               
                 <div class="amhtuto_tutorial-single__content">

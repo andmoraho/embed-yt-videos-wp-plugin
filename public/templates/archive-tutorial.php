@@ -58,9 +58,8 @@ $queryTutorial = new WP_Query($query_args);
             <div class="amhtuto_tutorial">
                 <div class="amhtuto_tutorial__container">
                     <div class="amhtuto_tutorial__video">
-                        <?php $tutorialYoutubeId = get_post_meta($post->ID, '_tutorial_contact_person', true);?>
-                        
-                       <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $tutorialYoutubeID;?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <?php $tutorialYoutubeId = get_post_meta($post->ID, '_tutorial_youtube_id', true);?>
+                        <iframe width="560" height="315" src="https://www.youtube.com/embed/<?php echo $tutorialYoutubeId;?>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                     </div>
                     <div class="amhtuto_tutorial__content">
                         <h4 class="amhtuto_tutorial__content-title"><?php echo the_title();?></h4>
@@ -71,7 +70,6 @@ $queryTutorial = new WP_Query($query_args);
                                           
                 </div>
             </div>
-
             <?php } ?>
         </div>
 
@@ -88,6 +86,6 @@ $queryTutorial = new WP_Query($query_args);
             ?>
         </div>
 </section>
-<?php //wp_reset_postdata();?>
+<?php wp_reset_postdata();?>
             
 <?php get_footer();?>
